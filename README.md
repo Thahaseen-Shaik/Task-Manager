@@ -1,161 +1,164 @@
-# Team Task Manager
+Team Task Manager
 
-A complete role-based team task manager built with Next.js 15 App Router, TypeScript, Tailwind CSS, Supabase Authentication, Prisma ORM, and SQLite.
+A modern role-based team collaboration and task management application built with Next.js 15, TypeScript, Tailwind CSS, Supabase Authentication, Prisma ORM, and SQLite.
 
-## Features
+🚀 Overview
 
-- Supabase email/password authentication
-- Admin and Member role access
-- Project create, edit, and delete
-- Task create, edit, delete, assignment, and status updates
-- Member view limited to assigned tasks
-- Dashboard analytics
-- Responsive Tailwind UI
-- Vercel deployment ready
+Team Task Manager helps teams efficiently manage projects, assign tasks, and track progress in real time. The platform provides secure authentication, role-based access control, project management, task tracking, and dashboard analytics through a clean and responsive user interface.
 
-## Stack
+Admins can manage projects and tasks, assign work to team members, and monitor team productivity, while Members can view and update their assigned tasks.
 
-- Next.js 15 App Router
-- TypeScript
-- Tailwind CSS
-- Supabase Auth
-- Prisma ORM
-- SQLite
+✨ Features
 
-## Local Setup
+🔐 Supabase Email/Password Authentication
+👤 Role-Based Access Control (Admin & Member)
+📁 Project Management
+✅ Task Creation, Assignment & Status Tracking
+📊 Dashboard Analytics
+📱 Fully Responsive UI
+⚡ Fast Next.js 15 App Router Architecture
+🎨 Modern Tailwind CSS Design
+🗄️ Prisma ORM with SQLite Database
+🚀 Vercel Deployment Ready
 
-1. Install dependencies:
+🛠️ Tech Stack
 
-```bash
-npm install
-```
+Frontend
+Next.js 15 App Router
+TypeScript
+Tailwind CSS
+Backend
+Next.js API Routes
+Prisma ORM
+SQLite Database
+Authentication
+Supabase Authentication
+Deployment
+Vercel
 
-2. Copy the environment file:
+📂 Project Structure
+app/
+ ├── api/
+ ├── dashboard/
+ ├── projects/
+ ├── tasks/
+ └── auth/
 
-```bash
-cp .env.example .env
-```
+components/
+lib/
+prisma/
+public/
+styles/
 
-3. Fill in `.env`:
+🔑 User Roles
 
-```env
+Admin
+Create, edit, and delete projects
+Create, assign, update, and delete tasks
+View all projects and tasks
+Access dashboard analytics
+Member
+View assigned tasks
+Update task status
+Track task progress
+
+⚙️ Environment Variables
+
+Create a .env file in the root directory:
+
 DATABASE_URL="file:./dev.db"
-NEXT_PUBLIC_SUPABASE_URL="https://[PROJECT-REF].supabase.co"
-NEXT_PUBLIC_SUPABASE_ANON_KEY="[SUPABASE-ANON-KEY]"
+
+NEXT_PUBLIC_SUPABASE_URL="https://your-project.supabase.co"
+
+NEXT_PUBLIC_SUPABASE_ANON_KEY="your-anon-key"
+
 ADMIN_EMAILS="admin@example.com"
-```
 
-4. Generate Prisma Client:
+📦 Installation
 
-```bash
+1. Clone the Repository
+git clone <your-repository-url>
+cd team-task-manager
+2. Install Dependencies
+npm install
+3. Generate Prisma Client
 npm run prisma:generate
-```
-
-5. Create the SQLite database tables for local development:
-
-```bash
+4. Initialize Database
 npm run db:init
-```
-
-You can also use Prisma migrations when the Prisma schema engine works on your machine:
-
-```bash
-npx prisma migrate deploy
-```
-
-6. Start development:
-
-```bash
+5. Start Development Server
 npm run dev
-```
 
-Open `http://localhost:3000`.
+Open:
 
-## Supabase Setup
+http://localhost:3000
 
-1. Create a Supabase project.
-2. Go to `Authentication > Providers` and enable Email.
-3. Go to `Project Settings > API` and copy:
-   - Project URL into `NEXT_PUBLIC_SUPABASE_URL`
-   - Anon public key into `NEXT_PUBLIC_SUPABASE_ANON_KEY`
-4. Add your first admin email to `ADMIN_EMAILS`.
+🗄️ Prisma Commands
 
-The first signed-in user also becomes Admin automatically, which helps initial setup.
-
-## Roles
-
-Admin users can:
-
-- Create, edit, and delete projects
-- Create, edit, and delete tasks
-- Assign tasks to members
-- View all tasks
-
-Member users can:
-
-- View assigned tasks
-- Update task status only
-
-## API Routes
-
-- `GET /api/auth`
-- `POST /api/auth`
-- `GET /api/auth/profile`
-- `POST /api/auth/profile`
-- `GET /api/projects`
-- `POST /api/projects`
-- `GET /api/projects/[id]`
-- `PATCH /api/projects/[id]`
-- `DELETE /api/projects/[id]`
-- `GET /api/tasks`
-- `POST /api/tasks`
-- `PATCH /api/tasks/[id]`
-- `DELETE /api/tasks/[id]`
-- `GET /api/dashboard`
-- `GET /api/dashboard/stats`
-
-## Prisma Commands
-
-```bash
 npm run prisma:generate
+
 npm run prisma:migrate -- --name init
+
 npm run prisma:deploy
+
 npm run prisma:studio
-```
 
-Use `npm run prisma:deploy` in production to apply existing migrations.
+🔐 Supabase Setup
 
-## Vercel Deployment
+Create a Supabase project
+Enable Email Authentication
+Copy:
+Project URL
+Anon Public Key
+Add them to .env
+Add admin email to:
+ADMIN_EMAILS="admin@example.com"
 
-1. Push the project to GitHub.
-2. Import the repo in Vercel.
-3. Add these Environment Variables in Vercel:
-   - `DATABASE_URL`
-   - `NEXT_PUBLIC_SUPABASE_URL`
-   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
-   - `ADMIN_EMAILS`
-4. Set the build command to:
+📡 API Routes
 
-```bash
+Authentication
+GET /api/auth
+POST /api/auth
+GET /api/auth/profile
+POST /api/auth/profile
+Projects
+GET /api/projects
+POST /api/projects
+PATCH /api/projects/[id]
+DELETE /api/projects/[id]
+Tasks
+GET /api/tasks
+POST /api/tasks
+PATCH /api/tasks/[id]
+DELETE /api/tasks/[id]
+Dashboard
+GET /api/dashboard
+GET /api/dashboard/stats
+
+🚀 Deployment
+
+Deploy on Vercel
+Push the project to GitHub
+Import repository into Vercel
+Add Environment Variables:
+DATABASE_URL
+NEXT_PUBLIC_SUPABASE_URL
+NEXT_PUBLIC_SUPABASE_ANON_KEY
+ADMIN_EMAILS
+Build Command:
 npm run build
-```
+Deploy the project
 
-5. Deploy.
+📸 Highlights
+Clean and modern UI
+Secure authentication flow
+Scalable full-stack architecture
+Easy task collaboration
+Beginner-friendly code structure
 
-If migrations have not been applied yet, run locally:
+📄 License
 
-```bash
-npm run prisma:migrate -- --name init
-```
+This project is created for educational and productivity purposes.
 
-For production database migration from CI or Vercel, use:
+👨‍💻 Developer
 
-```bash
-npm run prisma:deploy
-```
-
-## Notes
-
-- Supabase handles authentication sessions through secure cookies.
-- Prisma stores app users, roles, projects, and tasks in SQLite.
-- `ADMIN_EMAILS` is comma-separated. Example: `owner@app.com,lead@app.com`.
+Developed by Thahaseen Gulam
